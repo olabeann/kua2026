@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 국민취업지원제도 완벽 가이드</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --coral:     #F4623A;
+  --coral-lt:  #F87C5A;
+  --coral-bg:  #FFF0EB;
+  --coral-pale:#FDF6F3;
+  --cream:     #FDFAF7;
+  --sand:      #F5EFE8;
+  --sand-dk:   #EDE4D8;
+  --text:      #1A1410;
+  --text-mid:  #4A3F38;
+  --text-sub:  #8C7B72;
+  --white:     #FFFFFF;
+  --border:    #EDE0D6;
+  --green:     #3D9970;
+  --green-bg:  #EDFAF3;
+  --radius-xl: 28px;
+  --radius:    18px;
+  --radius-sm: 10px;
+  --shadow:    0 2px 20px rgba(244,98,58,0.08);
+  --shadow-md: 0 6px 32px rgba(244,98,58,0.15);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.65;
+}
+
+/* ── Decorative blob ── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.18;
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+/* ═══════════════════════════
+   Instagram Banner
+═══════════════════════════ */
+.ig-banner {
+  background: #F5EDE6;
+  padding: 13px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.ig-banner span {
+  color: var(--text);
+  font-size: clamp(13px,3.5vw,15px);
+  font-weight: 600;
+}
+.ig-banner a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(90deg,#F09433,#E6683C,#DC2743,#CC2366,#BC1888);
+  border: none;
+  color: #fff;
+  font-size: clamp(12px,3vw,14px);
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 100px;
+  text-decoration: none;
+  min-height: 44px;
+  transition: opacity .2s;
+}
+.ig-banner a:hover { opacity: .88; }
+.ig-banner a svg { width:17px; height:17px; flex-shrink:0; }
+
+/* ═══════════════════════════
+   Hero
+═══════════════════════════ */
+.hero {
+  background: var(--coral);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(52px,10vw,96px) 24px clamp(64px,12vw,120px);
+}
+.hero .blob-1 {
+  width: 420px; height: 420px;
+  background: #FF8C6B;
+  top: -100px; right: -80px;
+}
+.hero .blob-2 {
+  width: 260px; height: 260px;
+  background: #C73D18;
+  bottom: -60px; left: 40px;
+}
+/* Wavy bottom */
+.hero-wave {
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  line-height: 0;
+}
+.hero-wave svg { display: block; width: 100%; height: auto; }
+
+.hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+}
+@media(min-width:640px){
+  .hero-inner { grid-template-columns: 1fr 1fr; }
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.92);
+  font-size: clamp(10px,2.5vw,12px);
+  font-weight: 700;
+  letter-spacing: .14em;
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(28px,6.5vw,52px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  letter-spacing: -.02em;
+}
+.hero h1 em {
+  color: #FFE0D6;
+  font-style: normal;
+}
+.hero-desc {
+  color: rgba(255,255,255,0.82);
+  font-size: clamp(14px,3.5vw,17px);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--coral);
+  font-weight: 800;
+  font-size: clamp(14px,3.5vw,16px);
+  padding: 14px 30px;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  transition: transform .2s, box-shadow .2s;
+  min-height: 52px;
+}
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,0.22); }
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.hero-tag {
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.9);
+  font-size: clamp(12px,3vw,13px);
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+/* Hero right: big stat card */
+.hero-card {
+  background: rgba(255,255,255,0.14);
+  border: 1.5px solid rgba(255,255,255,0.28);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hero-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
+.hero-stat-icon {
+  width: 50px; height: 50px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.hero-stat-label { font-size: clamp(11px,2.8vw,13px); color: rgba(255,255,255,0.7); margin-bottom: 2px; }
+.hero-stat-val { font-size: clamp(20px,4.5vw,28px); font-weight: 900; color: #fff; line-height: 1; }
+.hero-stat-val sub { font-size: 60%; font-weight: 600; vertical-align: baseline; margin-left: 2px; }
+
+/* ═══════════════════════════
+   Section commons
+═══════════════════════════ */
+.section { padding: clamp(52px,9vw,88px) 24px; }
+.section-inner { max-width: 880px; margin: 0 auto; }
+.sec-label {
+  display: block;
+  font-size: clamp(10px,2.5vw,12px);
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: var(--coral);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.sec-title {
+  font-size: clamp(22px,5vw,38px);
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 8px;
+  letter-spacing: -.02em;
+}
+.sec-title em { color: var(--coral); font-style: normal; }
+.sec-desc {
+  color: var(--text-sub);
+  font-size: clamp(14px,3.5vw,16px);
+  margin-bottom: 40px;
+}
+
+/* ═══════════════════════════
+   Stat Strip
+═══════════════════════════ */
+.stat-strip {
+  background: var(--sand);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: clamp(28px,6vw,48px) 24px;
+}
+.stat-strip-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 24px;
+}
+.stat-pill {
+  text-align: center;
+  padding: 24px 16px;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform .2s;
+}
+.stat-pill:hover { transform: translateY(-3px); }
+.stat-pill.featured {
+  background: var(--coral);
+  border-color: var(--coral);
+  position: relative;
+}
+.stat-pill.featured::before {
+  content: '★ 최대';
+  position: absolute;
+  top: -1px; left: 50%; transform: translateX(-50%);
+  background: #FFB347;
+  color: #fff;
+  font-size: 11px; font-weight: 800;
+  padding: 3px 12px;
+  border-radius: 0 0 10px 10px;
+}
+.stat-pill-icon { font-size: 28px; display: block; margin-bottom: 8px; }
+.stat-pill-label { font-size: clamp(11px,2.8vw,13px); color: var(--text-sub); margin-bottom: 4px; }
+.stat-pill.featured .stat-pill-label { color: rgba(255,255,255,.75); }
+.stat-pill-val { font-size: clamp(26px,5.5vw,38px); font-weight: 900; color: var(--coral); line-height: 1; }
+.stat-pill.featured .stat-pill-val { color: #fff; }
+.stat-pill-val span { font-size: 55%; font-weight: 700; }
+.stat-pill-note { font-size: clamp(11px,2.8vw,12px); color: var(--text-sub); margin-top: 5px; }
+.stat-pill.featured .stat-pill-note { color: rgba(255,255,255,.65); }
+
+/* ═══════════════════════════
+   Comparison Table
+═══════════════════════════ */
+.section-sand { background: var(--sand); }
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+.cmp-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: clamp(13px,3.2vw,15px);
+  background: var(--white);
+}
+.cmp-table thead th {
+  padding: 20px 18px;
+  font-weight: 800;
+  font-size: clamp(14px,3.5vw,16px);
+  text-align: center;
+}
+.cmp-table thead th:first-child {
+  background: var(--sand);
+  color: var(--text-sub);
+  width: 100px;
+  font-size: clamp(12px,3vw,13px);
+}
+.th-t1 { background: var(--coral); color: #fff; }
+.th-t2 { background: #E8A48A; color: #3D1810; }
+.th-emoji { font-size: 22px; display: block; margin-bottom: 4px; }
+.cmp-table tbody tr:nth-child(odd) td { background: var(--cream); }
+.cmp-table tbody tr:nth-child(even) td { background: var(--white); }
+.cmp-table tbody td {
+  padding: 15px 18px;
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.cmp-table tbody td:first-child {
+  font-weight: 700;
+  font-size: clamp(12px,3vw,13px);
+  color: var(--text-sub);
+  text-align: center;
+  background: var(--sand) !important;
+  letter-spacing: .01em;
+}
+.cmp-table tbody td:nth-child(2) { border-left: 3px solid var(--coral); }
+.cmp-table tbody td:nth-child(3) { border-left: 3px solid #E8A48A; }
+.hl-coral { color: var(--coral); font-weight: 800; }
+.hl-sand  { color: #C8603A; font-weight: 800; }
+.note-sm  { font-size: clamp(11px,2.8vw,12px); color: var(--text-sub); display:block; margin-top:2px; }
+.tbl-note {
+  text-align: center;
+  margin-top: 16px;
+  font-size: clamp(12px,3vw,14px);
+  color: var(--text-sub);
+  display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap;
+}
+.tbl-note a { color: var(--coral); font-weight: 700; text-decoration: none; }
+.tbl-note a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════
+   Eligibility — organic layout
+═══════════════════════════ */
+.elig-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px,1fr));
+  gap: 14px;
+}
+.elig-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform .2s, box-shadow .2s;
+  position: relative;
+  overflow: hidden;
+}
+.elig-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--coral);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.elig-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.elig-icon { font-size: 30px; display: block; margin-bottom: 10px; }
+.elig-name { font-size: clamp(11px,2.8vw,13px); color: var(--text-sub); margin-bottom: 5px; font-weight: 600; }
+.elig-val  { font-size: clamp(15px,3.8vw,19px); font-weight: 900; color: var(--coral); line-height: 1.2; margin-bottom: 4px; }
+.elig-note { font-size: clamp(11px,2.8vw,12px); color: var(--text-sub); line-height: 1.5; }
+
+/* ═══════════════════════════
+   Allowances — magazine asymmetric
+═══════════════════════════ */
+.allow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 16px;
+}
+.allow-card {
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  box-shadow: var(--shadow);
+  transition: transform .2s, box-shadow .2s;
+  position: relative;
+  overflow: hidden;
+}
+.allow-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.allow-card.a1 { background: var(--coral); color: #fff; }
+.allow-card.a2 { background: var(--white); border: 1.5px solid var(--border); }
+.allow-card.a3 { background: var(--sand); border: 1.5px solid var(--border); }
+.allow-card.a4 { background: #FFF0EB; border: 1.5px solid #F9C9B5; }
+.allow-deco {
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 90px; height: 90px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+.allow-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.allow-emoji { font-size: 22px; }
+.allow-name { font-size: clamp(12px,3vw,13px); font-weight: 700; opacity: .8; }
+.allow-card.a1 .allow-name { color: rgba(255,255,255,.8); }
+.allow-amount { font-size: clamp(18px,4.5vw,24px); font-weight: 900; line-height: 1.2; margin-bottom: 10px; }
+.allow-card.a1 .allow-amount { color: #fff; }
+.allow-card:not(.a1) .allow-amount { color: var(--coral); }
+.allow-body { font-size: clamp(12px,3vw,13px); line-height: 1.65; }
+.allow-card.a1 .allow-body { color: rgba(255,255,255,.82); }
+.allow-card:not(.a1) .allow-body { color: var(--text-sub); }
+
+/* ═══════════════════════════
+   Process Steps
+═══════════════════════════ */
+.steps-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px,1fr));
+  gap: 16px;
+  position: relative;
+}
+.step-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 18px 22px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: transform .2s;
+}
+.step-card:hover { transform: translateY(-3px); }
+.step-num {
+  width: 44px; height: 44px;
+  background: var(--coral);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+  box-shadow: 0 4px 12px rgba(244,98,58,0.35);
+}
+.step-title { font-size: clamp(14px,3.5vw,16px); font-weight: 800; color: var(--text); margin-bottom: 3px; }
+.step-time  { font-size: clamp(11px,2.8vw,13px); color: var(--coral); font-weight: 700; margin-bottom: 10px; }
+.step-desc  { font-size: clamp(12px,3vw,13px); color: var(--text-sub); line-height: 1.6; }
+.step-arr {
+  display: none;
+  position: absolute;
+  right: -13px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--coral);
+  font-size: 18px;
+  z-index: 2;
+  background: var(--cream);
+  border-radius: 50%;
+  width: 26px; height: 26px;
+  align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(244,98,58,0.15);
+}
+@media(min-width:640px){
+  .steps-wrap { grid-template-columns: repeat(4,1fr); }
+  .step-arr { display: flex; }
+  .step-card:last-child .step-arr { display: none; }
+}
+.steps-note {
+  text-align: center;
+  margin-top: 18px;
+  font-size: clamp(13px,3.2vw,14px);
+  color: var(--text-sub);
+  display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap;
+}
+.steps-note a { color: var(--coral); font-weight: 700; text-decoration: none; }
+.steps-note a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════
+   Checklist
+═══════════════════════════ */
+.chk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 12px;
+}
+.chk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 15px 16px;
+  box-shadow: var(--shadow);
+  transition: border-color .2s;
+}
+.chk-item:hover { border-color: var(--coral); }
+.chk-icon {
+  width: 26px; height: 26px;
+  background: var(--green-bg);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: var(--green);
+  font-size: 13px; font-weight: 800;
+  margin-top: 1px;
+}
+.chk-text { font-size: clamp(13px,3.2vw,15px); font-weight: 600; color: var(--text); line-height: 1.45; }
+.chk-sub  { font-size: clamp(11px,2.8vw,12px); color: var(--text-sub); margin-top: 2px; }
+
+/* ═══════════════════════════
+   Tips
+═══════════════════════════ */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(196px,1fr));
+  gap: 16px;
+}
+.tip-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: var(--shadow);
+}
+.tip-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.tip-card::before {
+  content: attr(data-n);
+  position: absolute;
+  top: -12px; right: 14px;
+  font-size: 72px; font-weight: 900;
+  color: rgba(244,98,58,0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+.tip-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--coral), #FFB49A);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.tip-emoji { font-size: 26px; margin-bottom: 12px; display: block; }
+.tip-title { font-size: clamp(14px,3.5vw,16px); font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.tip-body  { font-size: clamp(12px,3vw,14px); color: var(--text-sub); line-height: 1.65; }
+
+/* ═══════════════════════════
+   FAQ
+═══════════════════════════ */
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-item {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transition: border-color .2s;
+}
+.faq-item.open { border-color: var(--coral); }
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: clamp(14px,3.5vw,16px);
+  font-weight: 700;
+  color: var(--text);
+  text-align: left;
+  min-height: 56px;
+  transition: background .15s;
+  word-break: keep-all;
+}
+.faq-q:hover { background: var(--coral-pale); }
+.faq-icon {
+  width: 26px; height: 26px;
+  background: var(--coral-bg);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--coral);
+  font-size: 16px; font-weight: 700;
+  transition: transform .25s, background .2s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--coral); color: #fff; }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, padding .25s;
+  padding: 0 20px;
+  font-size: clamp(13px,3.2vw,15px);
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+.faq-item.open .faq-a { max-height: 300px; padding: 0 20px 18px; }
+.faq-a strong { color: var(--coral); }
+.faq-a a { color: var(--coral); font-weight: 700; text-decoration: none; }
+.faq-a a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════
+   CTA Section
+═══════════════════════════ */
+.cta-sec {
+  background: var(--coral);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px,9vw,80px) 24px;
+  text-align: center;
+}
+.cta-sec .blob { opacity: .14; }
+.cta-sec .b1 { width:360px; height:360px; background:#FF8C6B; top:-100px; right:-60px; }
+.cta-sec .b2 { width:220px; height:220px; background:#C73D18; bottom:-50px; left:-30px; }
+.cta-sec h2 {
+  color: #fff;
+  font-size: clamp(22px,5.5vw,36px);
+  font-weight: 900;
+  margin-bottom: 10px;
+  line-height: 1.25;
+  position: relative; z-index: 2;
+}
+.cta-sec h2 em { color: #FFE0D6; font-style: normal; }
+.cta-sec p {
+  color: rgba(255,255,255,.8);
+  font-size: clamp(14px,3.5vw,16px);
+  margin-bottom: 28px;
+  position: relative; z-index: 2;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--coral);
+  font-weight: 800;
+  font-size: clamp(14px,3.5vw,16px);
+  padding: 14px 34px;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  transition: transform .2s;
+  min-height: 52px;
+  position: relative; z-index: 2;
+}
+.cta-btn:hover { transform: translateY(-2px); }
+.cta-meta {
+  margin-top: 20px;
+  color: rgba(255,255,255,.65);
+  font-size: clamp(12px,3vw,14px);
+  position: relative; z-index: 2;
+}
+.cta-meta a { color: #FFE0D6; font-weight: 700; text-decoration: none; }
+.cta-meta a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════
+   IG Bottom
+═══════════════════════════ */
+.ig-bottom {
+  background: var(--sand);
+  border-top: 1px solid var(--border);
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.ig-bottom-txt { font-size: clamp(14px,3.5vw,16px); color: var(--text-mid); font-weight: 700; }
+.ig-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg,#F09433,#E6683C,#DC2743,#CC2366,#BC1888);
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(14px,3.5vw,15px);
+  padding: 13px 30px;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(188,24,136,0.3);
+  min-height: 50px;
+  transition: transform .2s, box-shadow .2s;
+}
+.ig-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(188,24,136,0.4); }
+.ig-btn svg { width: 20px; height: 20px; flex-shrink:0; }
+
+/* ═══════════════════════════
+   Footer
+═══════════════════════════ */
+footer {
+  background: var(--text);
+  padding: 22px 20px;
+  text-align: center;
+  color: rgba(255,255,255,0.45);
+  font-size: clamp(11px,2.8vw,13px);
+}
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+/* ═══════════════════════════
+   Section wave divider
+═══════════════════════════ */
+.wave-down { line-height: 0; background: var(--cream); }
+.wave-down svg { display:block; width:100%; }
+.wave-up   { line-height: 0; background: var(--sand); }
+.wave-up svg { display:block; width:100%; }
+
+@media(max-width:480px){
+  .stat-strip-inner { grid-template-columns: 1fr 1fr; }
+  .elig-grid  { grid-template-columns: repeat(2,1fr); }
+  .allow-grid { grid-template-columns: 1fr; }
+  .tips-grid  { grid-template-columns: 1fr; }
+  .chk-grid   { grid-template-columns: 1fr; }
+  .steps-wrap { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ▌IG Top ▌-->
+<div class="ig-banner">
+  <span>💡 더 많은 꿀정보 얻고 싶다면?</span>
+  <a href="https://www.instagram.com/startup_tip_" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    @startup_tip_ 팔로우
+  </a>
+</div>
+
+<!-- ▌HERO ▌-->
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <span class="hero-badge">🎓 KUA 2026</span>
+      <h1>2026 국민취업<br>지원제도<br><em>최대 540만원</em><br>받는 법</h1>
+      <p class="hero-desc">구직자에게 매월 50~90만원의<br>구직촉진수당을 지원하는 정부 제도.<br>1유형과 2유형을 한 페이지에 정리했어요.</p>
+      <a class="hero-cta" href="https://www.work24.go.kr/ua/t/a/1100/selectEmssRqutCeck.do" target="_blank" rel="noopener">내 유형 30초 확인하기 →</a>
+      <div class="hero-tags">
+        <span class="hero-tag">💰 1유형: 최대 540만원</span>
+        <span class="hero-tag">📚 2유형: 월 28만원 취업활동비용</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-stat">
+        <div class="hero-stat-icon">📅</div>
+        <div>
+          <div class="hero-stat-label">지원 기간</div>
+          <div class="hero-stat-val">6<sub>개월</sub></div>
+        </div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-icon">💰</div>
+        <div>
+          <div class="hero-stat-label">1유형 최대 지급</div>
+          <div class="hero-stat-val">540<sub>만원</sub></div>
+        </div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-icon">📚</div>
+        <div>
+          <div class="hero-stat-label">2유형 활동비용</div>
+          <div class="hero-stat-val">28.4<sub>만/월</sub></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#FDFAF7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ▌STAT STRIP ▌-->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-pill">
+      <span class="stat-pill-icon">📅</span>
+      <div class="stat-pill-label">지원 기간</div>
+      <div class="stat-pill-val">6<span>개월</span></div>
+      <div class="stat-pill-note">매월 정기 지급</div>
+    </div>
+    <div class="stat-pill featured">
+      <span class="stat-pill-icon">💰</span>
+      <div class="stat-pill-label">1유형 최대 지급</div>
+      <div class="stat-pill-val">540<span>만원</span></div>
+      <div class="stat-pill-note">부양가족 수당 포함</div>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-pill-icon">📚</span>
+      <div class="stat-pill-label">2유형 활동비용</div>
+      <div class="stat-pill-val">28.4<span>만/월</span></div>
+      <div class="stat-pill-note">교통비·식비 명목</div>
+    </div>
+  </div>
+</div>
+
+<!-- ▌TYPE COMPARISON ▌-->
+<div class="wave-down"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#F5EFE8"/></svg></div>
+<section class="section section-sand">
+  <div class="section-inner">
+    <span class="sec-label">TYPE COMPARISON</span>
+    <h2 class="sec-title">1유형 vs <em>2유형</em> 한눈에</h2>
+    <p class="sec-desc">8가지 항목으로 본 두 유형의 핵심 차이.</p>
+    <div class="table-scroll">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th class="th-t1"><span class="th-emoji">💰</span>1유형 (저소득)</th>
+            <th class="th-t2"><span class="th-emoji">📚</span>2유형 (일반)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>대상</td>
+            <td><span class="hl-coral">중위소득 60% 이하</span><span class="note-sm">저소득 구직자</span></td>
+            <td><span class="hl-sand">중위소득 100% 이하</span><span class="note-sm">일반 구직자</span></td>
+          </tr>
+          <tr>
+            <td>청년 특례</td>
+            <td><span class="hl-coral">중위소득 120%까지</span><span class="note-sm">18~34세</span></td>
+            <td><span class="hl-sand">소득 무관</span><span class="note-sm">18~34세</span></td>
+          </tr>
+          <tr>
+            <td>재산 기준</td>
+            <td>4억 이하<span class="note-sm">(청년 5억)</span></td>
+            <td>6억 이하</td>
+          </tr>
+          <tr>
+            <td>수당 종류</td>
+            <td><span class="hl-coral">구직촉진수당</span><span class="note-sm">(현금 지급)</span></td>
+            <td><span class="hl-sand">취업활동비용</span><span class="note-sm">(교통비·식비)</span></td>
+          </tr>
+          <tr>
+            <td>월 지급액</td>
+            <td><span class="hl-coral">50~90만원</span><span class="note-sm">(부양가족 시 증액)</span></td>
+            <td><span class="hl-sand">28만 4천원</span><span class="note-sm">(고정)</span></td>
+          </tr>
+          <tr>
+            <td>최대 지급</td>
+            <td><span class="hl-coral">540만원</span><span class="note-sm">(6개월 × 90만)</span></td>
+            <td><span class="hl-sand">약 170만원</span><span class="note-sm">(6개월 × 28.4만)</span></td>
+          </tr>
+          <tr>
+            <td>취업지원</td>
+            <td>맞춤형 상담 + IAP<br>직업훈련·일경험</td>
+            <td>맞춤형 상담 + IAP<br>직업훈련·일경험</td>
+          </tr>
+          <tr>
+            <td>참여 횟수</td>
+            <td><span class="hl-coral">평생 1회</span><span class="note-sm">(원칙)</span></td>
+            <td><span class="hl-sand">제한 없음</span><span class="note-sm">(반복 가능)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">💡 정확한 판정은 <a href="https://www.work24.go.kr" target="_blank">고용24</a>에서 가능합니다.</p>
+  </div>
+</section>
+<div class="wave-up"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,0 1080,40 1440,20 L1440,0 L0,0 Z" fill="#FDFAF7"/></svg></div>
+
+<!-- ▌ELIGIBILITY ▌-->
+<section class="section">
+  <div class="section-inner">
+    <span class="sec-label">ELIGIBILITY</span>
+    <h2 class="sec-title">공통 <em>자격 요건</em> 4가지</h2>
+    <p class="sec-desc">1유형·2유형 공통으로 충족해야 하는 기본 조건.</p>
+    <div class="elig-grid">
+      <div class="elig-card">
+        <span class="elig-icon">🎂</span>
+        <div class="elig-name">나이</div>
+        <div class="elig-val">15~69세</div>
+        <div class="elig-note">만 나이 기준<br>청년: 18~34세</div>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">💵</span>
+        <div class="elig-name">소득</div>
+        <div class="elig-val">중위소득 100%</div>
+        <div class="elig-note">1유형: 60% 이하<br>청년: 120%까지</div>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">🏠</span>
+        <div class="elig-name">재산</div>
+        <div class="elig-val">최대 6억</div>
+        <div class="elig-note">1유형: 4억<br>청년: 5억</div>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">💼</span>
+        <div class="elig-name">취업 상태</div>
+        <div class="elig-val">구직 중</div>
+        <div class="elig-note">실업급여 중복 불가<br>전일제 학생 제외</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▌2유형 세부 대상 ▌-->
+<div class="wave-down"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#F5EFE8"/></svg></div>
+<section class="section section-sand">
+  <div class="section-inner">
+    <span class="sec-label">TYPE II DETAIL</span>
+    <h2 class="sec-title">2유형 <em>세부 대상</em></h2>
+    <p class="sec-desc">특정계층·청년·중장년 세 가지로 구분돼요.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <!-- 특정계층 -->
+      <div style="background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--border);">
+        <div style="background:#A0622A;padding:16px 20px;text-align:center;">
+          <div style="color:rgba(255,255,255,0.75);font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:4px;">SPECIFIC GROUP</div>
+          <div style="color:#fff;font-size:clamp(16px,4vw,20px);font-weight:900;">특정계층</div>
+        </div>
+        <div style="padding:20px;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--border);">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">나이</span>
+              <span style="font-size:13px;color:var(--text-mid);font-weight:600;text-align:right;">특정계층(II유형) 표 참조</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--border);">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">소득</span>
+              <span style="font-size:13px;color:var(--text-mid);">무관</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--border);">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">재산</span>
+              <span style="font-size:13px;color:var(--text-mid);">무관</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">취업경험</span>
+              <span style="font-size:13px;color:var(--text-mid);">무관</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 청년 -->
+      <div style="background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--border);">
+        <div style="background:#C4763A;padding:16px 20px;text-align:center;">
+          <div style="color:rgba(255,255,255,0.75);font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:4px;">YOUTH</div>
+          <div style="color:#fff;font-size:clamp(16px,4vw,20px);font-weight:900;">청년</div>
+        </div>
+        <div style="padding:20px;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--border);">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">나이</span>
+              <span style="font-size:clamp(14px,3.5vw,16px);color:var(--coral);font-weight:900;">15~34세</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--border);">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">소득</span>
+              <span style="font-size:13px;color:var(--text-mid);">무관</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--border);">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">재산</span>
+              <span style="font-size:13px;color:var(--text-mid);">무관</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">취업경험</span>
+              <span style="font-size:13px;color:var(--text-mid);">무관</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 중장년 -->
+      <div style="background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--border);">
+        <div style="background:#E08A50;padding:16px 20px;text-align:center;">
+          <div style="color:rgba(255,255,255,0.75);font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:4px;">MIDDLE-AGED</div>
+          <div style="color:#fff;font-size:clamp(16px,4vw,20px);font-weight:900;">중장년</div>
+        </div>
+        <div style="padding:20px;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--border);">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">나이</span>
+              <span style="font-size:13px;color:var(--text-mid);">35~69세</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--border);">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">소득</span>
+              <span style="font-size:clamp(13px,3.2vw,14px);color:var(--coral);font-weight:800;">중위소득 100% 이하</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--border);">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">재산</span>
+              <span style="font-size:13px;color:var(--text-mid);">무관</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:13px;color:var(--text-sub);font-weight:600;">취업경험</span>
+              <span style="font-size:13px;color:var(--text-mid);">무관</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 공통 지원 내용 -->
+    <div style="margin-top:16px;background:var(--coral);border-radius:var(--radius-sm);padding:16px 24px;text-align:center;">
+      <span style="color:#fff;font-size:clamp(14px,3.5vw,16px);font-weight:800;">📋 공통 지원 내용: 취업활동비용 및 취업지원서비스 제공</span>
+    </div>
+  </div>
+</section>
+<div class="wave-up"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,0 1080,40 1440,20 L1440,0 L0,0 Z" fill="#FDFAF7"/></svg></div>
+
+<!-- ▌특정계층(II유형) 목록 ▌-->
+<section class="section">
+  <div class="section-inner">
+    <span class="sec-label">SPECIFIC GROUP</span>
+    <h2 class="sec-title">특정계층(II유형) <em>22가지</em></h2>
+    <p class="sec-desc">아래 22가지 중 하나에 해당하면 소득·재산 무관하게 참여 가능해요.</p>
+    <div style="background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 32px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">1.</span>기초연금 수급자 등
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">12.</span>국가유공자 가구원 중 취업지원 대상자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">2.</span>생계급여 수급자(근로능력이 있는 자에 한함)
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">13.</span>미혼모(부)·한부모·청소년부모
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">3.</span>노숙인 등 비주택 거주자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">14.</span>구직단념청년
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">4.</span>북한이탈주민
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">15.</span>산재로 장해를 입은 사람
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">5.</span>여성가구주
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">16.</span>고용위기지역 등 지정에 따른 실직자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">6.</span>결혼이민자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">17.</span>「기업활력 제고를 위한 특별법」에 따른 참여자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">7.</span>결혼이민자의 외국인자녀
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">18.</span>특별고용지원업종의 실직자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">8.</span>신용회복지원자 등
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">19.</span>영세 자영업자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">9.</span>위기청소년 등
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">20.</span>소상공인 및 성실경영실패자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">10.</span>FTA(자유무역협정) 피해 실직자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">21.</span>노무제공자 등
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">11.</span>건설일용직 근로자
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:clamp(13px,3.2vw,14px);color:var(--text-mid);">
+          <span style="color:var(--coral);font-weight:800;flex-shrink:0;min-width:22px;">22.</span>국민취업지원제도와 연계되는 직접일자리사업 참여자
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▌참여 불가 대상 ▌-->
+<div class="wave-down"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#F5EFE8"/></svg></div>
+<section class="section section-sand">
+  <div class="section-inner">
+    <span class="sec-label">EXCLUSION</span>
+    <h2 class="sec-title">참여할 수 <em>없는 대상</em></h2>
+    <p class="sec-desc">아래 해당되는 경우 신청 전에 꼭 확인하세요.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+      <!-- I유형 참여 불가 -->
+      <div style="background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--border);">
+        <div style="background:#8B2500;padding:14px 20px;">
+          <div style="color:#fff;font-size:clamp(14px,3.5vw,16px);font-weight:800;">🚫 I유형 참여 불가</div>
+        </div>
+        <ul style="list-style:none;padding:20px;margin:0;display:flex;flex-direction:column;gap:0;">
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#8B2500;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            취업중인자(단, 임금근로자 주30시간 미만, 사업소득자 월소득 250만원 미만은 불완전 취업자로 참여가능)
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#8B2500;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            근로능력, 취업 및 구직의사가 없는 사람
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#8B2500;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            생계급여 수급자
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#8B2500;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            구직급여를 수급 중이거나 수급 종료 후 6개월이 지나지 않은 사람
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#8B2500;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            재정지원 일자리사업에 참여 중이거나 참여 종료 후 6개월이 지나지 않은 사람. 단 일부사업의 경우 참여 종료 후 즉시 참여 가능
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#8B2500;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            국가 또는 지방자치단체가 구직활동에 필요한 비용을 지원하는 수당을 수급 중이거나 수급 종료 후 6개월이 지나지 않은 사람
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#8B2500;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            신청인 본인의 월평균 소득이 1인 가구 기준 중위소득의 60%(1,538,543원)가 넘는 사람
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#8B2500;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            상급학교 진학 및 전문자격증 취득을 목적으로 각종학교에 재학 또는 학원 등에서 수강중인 사람
+          </li>
+        </ul>
+      </div>
+      <!-- II유형 참여 불가 -->
+      <div style="background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--border);">
+        <div style="background:#C4763A;padding:14px 20px;">
+          <div style="color:#fff;font-size:clamp(14px,3.5vw,16px);font-weight:800;">🚫 II유형 참여 불가</div>
+        </div>
+        <ul style="list-style:none;padding:20px;margin:0;display:flex;flex-direction:column;gap:0;">
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#C4763A;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            취업중인자(단, 임금근로자 주30시간 미만, 사업소득자 월소득 250만원 미만은 불완전 취업자로 참여가능)
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#C4763A;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            근로능력, 취업 및 구직의사가 없는 사람
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#C4763A;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            구직급여 수급자(수급 종료 후 참여 가능)
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#C4763A;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            재정지원 일자리사업에 참여 중인 사람(종료후 참여가능)
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#C4763A;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            국가 또는 지방자치단체가 구직활동에 필요한 비용을 지원하는 수당을 수급 중인 사람(수급 종료 후 참여 가능)
+          </li>
+          <li style="display:flex;gap:10px;padding:11px 0;font-size:clamp(12px,3vw,14px);color:var(--text-mid);line-height:1.6;">
+            <span style="color:#C4763A;font-weight:800;flex-shrink:0;margin-top:2px;">•</span>
+            상급학교 진학 및 전문자격증 취득을 목적으로 각종학교에 재학 또는 학원 등에서 수강중인 사람
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wave-up"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,0 1080,40 1440,20 L1440,0 L0,0 Z" fill="#FDFAF7"/></svg></div>
+<div class="wave-down"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#F5EFE8"/></svg></div>
+<section class="section section-sand">
+  <div class="section-inner">
+    <span class="sec-label">ALLOWANCES</span>
+    <h2 class="sec-title">다양한 <em>수당 종류</em></h2>
+    <p class="sec-desc">구직촉진수당 외에도 다양한 추가 수당이 있어요.</p>
+    <div class="allow-grid">
+      <div class="allow-card a1">
+        <div class="allow-deco"></div>
+        <div class="allow-header"><span class="allow-emoji">💰</span><span class="allow-name">구직촉진수당</span></div>
+        <div class="allow-amount">월 50만원 × 6개월</div>
+        <div class="allow-body">1유형 전용. 매월 50만원씩 6개월 = 최대 300만원. 부양가족 1인당 10만원 추가(최대 40만원 추가).</div>
+      </div>
+      <div class="allow-card a2">
+        <div class="allow-header"><span class="allow-emoji">🎯</span><span class="allow-name">취업성공수당</span></div>
+        <div class="allow-amount">최대 150만원</div>
+        <div class="allow-body">6개월 이상 근속 시 추가 지급. 1유형 또는 2유형 특정계층 참여자만 받을 수 있어요.</div>
+      </div>
+      <div class="allow-card a3">
+        <div class="allow-header"><span class="allow-emoji">⚡</span><span class="allow-name">조기취업성공수당</span></div>
+        <div class="allow-amount">잔여 수당의 50%</div>
+        <div class="allow-body">6개월 안에 조기 취업 시 받지 못한 잔여 수당의 50% 추가 지급. 빨리 취업할수록 이득!</div>
+      </div>
+      <div class="allow-card a4">
+        <div class="allow-header"><span class="allow-emoji">📚</span><span class="allow-name">취업활동비용</span></div>
+        <div class="allow-amount">월 28.4만원</div>
+        <div class="allow-body">2유형 전용. 직업훈련 참여 시 교통비·식비 명목. 6개월 약 170만원 총액.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wave-up"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,0 1080,40 1440,20 L1440,0 L0,0 Z" fill="#FDFAF7"/></svg></div>
+
+<!-- ▌PROCESS ▌-->
+<section class="section">
+  <div class="section-inner">
+    <span class="sec-label">PROCESS</span>
+    <h2 class="sec-title">취업지원 신청 절차 <em>5단계</em></h2>
+    <p class="sec-desc">수급자격 (불)인정 알림까지 평균 1개월 이내.</p>
+    <div class="steps-wrap" style="grid-template-columns: repeat(auto-fit, minmax(148px,1fr));">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">동영상 교육</div>
+        <div class="step-time">필수 수강</div>
+        <div class="step-desc">제도 안내 동영상. 1회차, 2회차 필수 수강. <a href="https://www.work24.go.kr" target="_blank" style="color:var(--coral);font-weight:700;text-decoration:none;">동영상 교육 수강 바로가기 →</a></div>
+        <span class="step-arr">→</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title">구직 등록</div>
+        <div class="step-time">필수</div>
+        <div class="step-desc">신청 전에 '구직등록'을 먼저 하셔야 합니다. <a href="https://www.work24.go.kr" target="_blank" style="color:var(--coral);font-weight:700;text-decoration:none;">구직 등록 바로가기 →</a></div>
+        <span class="step-arr">→</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title">취업지원 신청</div>
+        <div class="step-time">온라인 제출</div>
+        <div class="step-desc">취업지원 신청서 작성 및 제출. 홈페이지 또는 고용서비스기관.</div>
+        <span class="step-arr">→</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-title">접수·조사·결정</div>
+        <div class="step-time">심사</div>
+        <div class="step-desc">취업지원 신청서 검토. 접수·조사·결정 진행.</div>
+        <span class="step-arr">→</span>
+      </div>
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <div class="step-title">알림</div>
+        <div class="step-time">약 1개월 이내</div>
+        <div class="step-desc">수급자격 (불)인정 알림. 1개월 안에 서면 통지서 발송.</div>
+      </div>
+    </div>
+    <div style="margin-top:28px; background:var(--coral-bg); border:1.5px solid #F9C9B5; border-radius:var(--radius); padding:22px 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px;">
+      <div>
+        <div style="font-size:clamp(14px,3.5vw,16px); font-weight:800; color:var(--text); margin-bottom:4px;">고용센터 방문 신청시 필요 서식 안내</div>
+        <div style="font-size:clamp(12px,3vw,14px); color:var(--text-sub);">홈페이지를 통한 신청이 어려울 경우 서식을 직접 작성하셔서 고용센터를 방문하세요.</div>
+      </div>
+      <a href="https://www.work24.go.kr/ua/z/z/1300/selectEmssRqutIntro.do?intro=1#none" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--border);color:var(--text);font-size:clamp(13px,3.2vw,15px);font-weight:700;padding:12px 20px;border-radius:var(--radius-sm);text-decoration:none;white-space:nowrap;min-height:48px;box-shadow:var(--shadow);transition:border-color .2s;"
+         onmouseover="this.style.borderColor='var(--coral)'" onmouseout="this.style.borderColor='var(--border)'">
+        방문 신청 시 작성 서류 확인 →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ▌CHECKLIST ▌-->
+<div class="wave-down"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#F5EFE8"/></svg></div>
+<section class="section section-sand">
+  <div class="section-inner">
+    <span class="sec-label">CHECKLIST</span>
+    <h2 class="sec-title">신청 전 <em>확인 리스트</em></h2>
+    <p class="sec-desc">이 항목들을 먼저 준비하면 신청이 훨씬 빨라져요.</p>
+    <div class="chk-grid">
+      <div class="chk-item">
+        <div class="chk-icon">✓</div>
+        <div><div class="chk-text">워크넷 구직등록 완료</div><div class="chk-sub">work24.go.kr 가입 후 이력서 작성 필수</div></div>
+      </div>
+      <div class="chk-item">
+        <div class="chk-icon">✓</div>
+        <div><div class="chk-text">주민등록증 또는 신분증</div><div class="chk-sub">본인 확인용</div></div>
+      </div>
+      <div class="chk-item">
+        <div class="chk-icon">✓</div>
+        <div><div class="chk-text">가구원 정보 파악</div><div class="chk-sub">소득·재산 합산 기준 적용</div></div>
+      </div>
+      <div class="chk-item">
+        <div class="chk-icon">✓</div>
+        <div><div class="chk-text">건강보험료 납부 확인서</div><div class="chk-sub">소득 분위 판단 기준</div></div>
+      </div>
+      <div class="chk-item">
+        <div class="chk-icon">✓</div>
+        <div><div class="chk-text">본인 명의 계좌번호</div><div class="chk-sub">수당 입금 계좌 등록 필요</div></div>
+      </div>
+      <div class="chk-item">
+        <div class="chk-icon">✓</div>
+        <div><div class="chk-text">실업급여 수급 여부 확인</div><div class="chk-sub">실업급여 수급 중에는 중복 불가</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wave-up"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,0 1080,40 1440,20 L1440,0 L0,0 Z" fill="#FDFAF7"/></svg></div>
+
+<!-- ▌TIPS ▌-->
+<section class="section">
+  <div class="section-inner">
+    <span class="sec-label">TIPS</span>
+    <h2 class="sec-title">놓치면 손해! <em>꿀팁 4가지</em></h2>
+    <p class="sec-desc">신청 전에 꼭 알아야 할 실전 꿀팁이에요.</p>
+    <div class="tips-grid">
+      <div class="tip-card" data-n="1">
+        <span class="tip-emoji">⚡</span>
+        <div class="tip-title">예산 조기 소진 주의</div>
+        <div class="tip-body">예산이 정해져 있어 조기 마감될 수 있어요. 자격이 되면 지금 바로 신청하는 게 유리해요!</div>
+      </div>
+      <div class="tip-card" data-n="2">
+        <span class="tip-emoji">📱</span>
+        <div class="tip-title">국민비서 알림 신청</div>
+        <div class="tip-body">카카오톡·토스·네이버 앱에서 국민비서 알림을 신청하면 신청 기간, 결과를 바로 받을 수 있어요.</div>
+      </div>
+      <div class="tip-card" data-n="3">
+        <span class="tip-emoji">🏃</span>
+        <div class="tip-title">조기 취업하면 더 유리</div>
+        <div class="tip-body">6개월 안에 취업 성공 시 못 받은 잔여 수당의 50%를 추가로 받아요. 빨리 취업할수록 이득!</div>
+      </div>
+      <div class="tip-card" data-n="4">
+        <span class="tip-emoji">👨‍👩‍👧</span>
+        <div class="tip-title">부양가족 수당 챙기기</div>
+        <div class="tip-body">1유형은 부양가족 1인당 10만원 추가(최대 40만원). 가족 정보를 빠뜨리지 말고 꼭 입력하세요!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▌FAQ ▌-->
+<div class="wave-down"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#F5EFE8"/></svg></div>
+<section class="section section-sand">
+  <div class="section-inner">
+    <span class="sec-label">FAQ</span>
+    <h2 class="sec-title">자주 묻는 질문 <em>TOP 5</em></h2>
+    <p class="sec-desc">가장 많이 묻는 5가지 질문에 답해드립니다.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          실업급여랑 같이 받을 수 있나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><strong>아니요, 중복 수급 불가</strong>입니다. 실업급여 수급 중에는 국민취업지원제도 참여 불가. 다만 <strong>실업급여 종료 후</strong> 일정 기간 경과 시 신청 가능합니다. 고용센터에 정확한 신청 시점 확인하세요.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          대학생도 받을 수 있나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><strong>일반적으로 제한</strong>됩니다. 주간 전일제 대학·대학원생은 참여 불가. 다만 <strong>마지막 학기 재학생·휴학생·방송통신대·사이버대·야간대학(원)</strong>은 참여 가능. 본인 학적 상태를 정확히 확인하세요.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          구직활동 안 하면 수당 끊기나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><strong>네, 수당 지급이 중단</strong>됩니다. 매월 정한 구직활동(이력서 제출·면접·훈련 등) <strong>2회 이상 의무 이행</strong>. 미이행 시 해당 월 수당 지급 안 됨. 활동 증빙 등록도 필수예요.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          아르바이트 하면 수당 못 받나요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><strong>주 15시간 미만 알바는 가능</strong>합니다. 다만 알바 소득이 일정 금액 초과 시 구직촉진수당이 감액되거나 중단될 수 있어요. 정확한 소득 신고 필수. 신고 안 하면 <strong>부정수급으로 환수</strong>됩니다.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          참여 두 번째도 가능한가요?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">유형에 따라 다릅니다. <strong>1유형은 평생 1회 참여 원칙</strong>(예외 인정 시 재참여 가능). <strong>2유형은 반복 참여 가능</strong>. 1유형 종료 후 2유형 참여는 가능. 본인 이력은 고용센터에 확인하세요.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wave-up"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,0 1080,40 1440,20 L1440,0 L0,0 Z" fill="#FDFAF7"/></svg></div>
+
+<!-- ▌CTA ▌-->
+<section class="cta-sec">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <h2>지금 바로 <em>고용24</em>에서<br>신청하세요</h2>
+  <p>워크넷 구직등록 후 고용24에서 5분이면 신청 끝!<br>예산 조기 소진 가능하니 자격 되시면 빨리 신청하세요.</p>
+  <a class="cta-btn" href="https://www.work24.go.kr" target="_blank" rel="noopener">고용24 신청 페이지로 →</a>
+  <div class="cta-meta">문의: <a href="tel:1350">고용노동부 1350</a> · <a href="https://www.work24.go.kr" target="_blank">신청 방법 페이지</a> 참고</div>
+</section>
+
+<!-- ▌IG Bottom ▌-->
+<div class="ig-bottom">
+  <div class="ig-bottom-txt">💡 더 많은 꿀정보 얻고 싶다면?</div>
+  <a class="ig-btn" href="https://www.instagram.com/startup_tip_" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    @startup_tip_ 팔로우하기
+  </a>
+</div>
+
+<footer>
+  <p>본 페이지는 정보 제공 목적으로 제작되었습니다. 정확한 자격 요건 및 지급 금액은 <a href="https://www.work24.go.kr" target="_blank">고용24</a> 또는 고용노동부(1350)에서 확인하세요.</p>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
